@@ -1,0 +1,17 @@
+.elem {
+    background-color: yellowgreen;
+    border-color: white;
+    border-width: 5px;
+    color: white;
+}
+
+.hlavicka {
+    margin-left: 3%;
+    margin-top: 3%; 
+}
+
+div {
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 3%;
+}

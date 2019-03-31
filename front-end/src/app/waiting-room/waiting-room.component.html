@@ -1,0 +1,41 @@
+<p class="hlavicka">
+  Dnes je {{ day }}. {{ month }}.
+</p>
+
+<div>
+  <table class="table table-striped mx-auto m-3 elem">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Meno</th>
+        <th scope="col">ID</th>
+        <th scope="col">Dôvod návštevy</th>
+        <th scope="col">Komentár</th>
+        <th scope="col">Poisťovna</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let d of doctor | async">
+        <ng-container *ngFor="let pacient of d.cakaren; index as i">
+          <ng-container *ngFor="let p of patients | async">
+              <tr *ngIf="p.id == pacient.id">
+                  <th scope="row">{{ i + 1}}</th>
+                  <td>
+                    <a href="/pacient/{{p.id}}" style="color: whitesmoke"> {{ p.meno }}</a>
+                  </td>
+                  <td>{{ p.id }}</td>
+                  <td>{{ (pacient.typ === "ADMIN") ? "administratíva" : "vyšetrenie" }}</td>
+                  <td>{{ pacient.komentar }}</td>
+                  <td>{{ p.poistovna }}</td>
+                </tr>
+          </ng-container>
+        </ng-container>
+      </tbody>
+    </table>
+</div>
+
+  
+  
+
+
+
+

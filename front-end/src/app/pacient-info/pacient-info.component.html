@@ -1,0 +1,53 @@
+
+<!-- <h1 *ngFor="let pacient of pacienti">{{pacient.meno}}</h1> -->
+
+<a type="button" class="btn btn-secondary tlacitko" href="home">Naspäť do čakárne</a>
+
+<div *ngFor="let p of items | async">
+      <div *ngIf="p.id === patientId" class="list-group">
+          <div class="list-group-item active elem">
+              <h4 class="list-group-item-heading">Meno</h4>
+              <p class="list-group-item-text">{{ p.meno }}</p>
+          </div>
+          <div class="list-group-item active elem">
+              <h4 class="list-group-item-heading">E-mail</h4>
+              <p class="list-group-item-text">{{ p.email }}</p>
+          </div>
+          <div class="list-group-item active elem">
+              <h4 class="list-group-item-heading">ID</h4>
+              <p class="list-group-item-text">{{ p.id }}</p>
+          </div>
+          <div class="list-group-item active elem">
+              <h4 class="list-group-item-heading">Poisťovňa</h4>
+              <p class="list-group-item-text">{{ p.poistovna }}</p>
+          </div>
+          <div class="list-group-item active elem">
+              <h4 class="list-group-item-heading">Krvná skupina</h4>
+              <p class="list-group-item-text">{{ p.krvnaSkupina }}</p>
+          </div>
+          <div class="list-group-item active elem">
+              <h4 class="list-group-item-heading">RH</h4>
+              <p class="list-group-item-text">{{ p.krvRh }}</p>
+          </div>
+          <div class="list-group-item active elem">
+              <h4 class="list-group-item-heading">Ochorenia</h4>
+              <ul>
+                  <li *ngFor="let o of p.ochorenia" class="list-group-item-text">{{ o }}</li>
+              </ul>
+          </div>
+          <div class="list-group-item active elem">
+              <h4 class="list-group-item-heading">Alergie</h4>
+              <ul>
+                  <li *ngFor="let a of p.alergie" class="list-group-item-text">{{ a }}</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+<!-- <div *ngFor="let p of items | async">
+    <div *ngIf="p.id === patientId">
+        <p>Meno: {{p.meno}}</p>
+        <p>ID: {{p.id}}</p>
+        <p>{{p | json}}</p>
+    </div>
+</div> -->

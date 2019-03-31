@@ -1,0 +1,12 @@
+.elem {
+    background-color: yellowgreen;
+    border-color: white;
+    border-width: 5px;
+    color: white;
+}
+
+div {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3%;
+}

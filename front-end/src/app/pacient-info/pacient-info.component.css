@@ -1,0 +1,13 @@
+.elem {
+    background-color: yellowgreen;
+    border-color: white;
+    border-width: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.tlacitko {
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+}
