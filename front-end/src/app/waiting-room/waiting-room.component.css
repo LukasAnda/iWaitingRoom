@@ -15,3 +15,7 @@ div {
     margin-right: 8%;
     margin-top: 3%;
 }
+
+.rel {
+    position: relative;
+}

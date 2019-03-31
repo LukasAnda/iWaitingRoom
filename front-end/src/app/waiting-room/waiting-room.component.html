@@ -1,5 +1,5 @@
 <p class="hlavicka">
-  Dnes je {{ day }}. {{ month }}.
+  Dnes je {{ day }}. {{ month }}. {{ year }}.
 </p>
 
 <div>
@@ -20,7 +20,9 @@
               <tr *ngIf="p.id == pacient.id">
                   <th scope="row">{{ i + 1}}</th>
                   <td>
-                    <a href="/pacient/{{p.id}}" style="color: whitesmoke"> {{ p.meno }}</a>
+                    <a href="pacient/{{p.id}}" style="color: whitesmoke"> 
+                      {{ p.meno.split(" ")[0][0] }}. {{ p.meno.split(" ")[1][0] }}.
+                    </a>
                   </td>
                   <td>{{ p.id }}</td>
                   <td>{{ (pacient.typ === "ADMIN") ? "administratíva" : "vyšetrenie" }}</td>
@@ -31,6 +33,13 @@
         </ng-container>
       </tbody>
     </table>
+    <div class="list-group">
+      <div class="list-group-item active elem">
+          <h4 class="list-group-item-heading">QR kód</h4>
+          <img src="https://cabiapi.github.io/iWaitingRoom/assets/data/qrcode.png" alt="" height="350" width="350" 
+        style="margin-bottom: 3%; margin-top: 3%">
+      </div>
+    </div>
 </div>
 
   
