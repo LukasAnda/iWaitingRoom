@@ -207,9 +207,6 @@ class HomeActivity : AppCompatActivity() {
 			val rootView = inflater.inflate(
 				R.layout.fragment_home, container, false
 			)
-			rootView.section_label.text = getString(
-				R.string.section_format, arguments?.getInt(ARG_SECTION_NUMBER)
-			)
 			return rootView
 		}
 

@@ -16,6 +16,7 @@ import com.lukasanda.medicalapp.Doktor
 import com.lukasanda.medicalapp.Patient
 import com.lukasanda.medicalapp.R
 import kotlinx.android.synthetic.main.fragment_place.view.*
+import kotlin.random.Random
 
 class PlaceFragment : Fragment() {
 
@@ -80,11 +81,20 @@ class PlaceFragment : Fragment() {
 			val doktor = it.toObject(Doktor::class.java)
 			doktor?.let { mojDoktor ->
 				pacient?.let {
-					mojDoktor.cakaren?.add(
-						Cakaren(
-							it.id, "ADMIN", System.currentTimeMillis(), "", mojDoktor.cakaren?.size ?: 0
+					val rand = Random(123).nextBoolean()
+					if (rand) {
+						mojDoktor.cakaren?.add(
+							Cakaren(
+								it.id, "Vysetrenie", System.currentTimeMillis(), "", mojDoktor.cakaren?.size ?: 0
+							)
 						)
-					)
+					} else {
+						mojDoktor.cakaren?.add(
+							Cakaren(
+								it.id, "ADMIN", System.currentTimeMillis(), "", mojDoktor.cakaren?.size ?: 0
+							)
+						)
+					}
 					db.collection("doctors").document(id).set(
 						mojDoktor
 					).addOnSuccessListener {
@@ -109,7 +119,7 @@ class PlaceFragment : Fragment() {
 		db.collection("doctors").document(pacient?.cakaren ?: "").get().addOnSuccessListener {
 			val doktor = it.toObject(Doktor::class.java)
 			doktor?.let { mojDoktor ->
-				pacient?.let {patient->
+				pacient?.let { patient ->
 					val novaCakaren = mojDoktor.cakaren
 					novaCakaren?.forEach {
 						if (it.id == patient.id) {

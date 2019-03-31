@@ -7,14 +7,14 @@
         tools:context=".activities.LoginActivity">
 
     <Button android:layout_width="match_parent" android:id="@+id/login_doctor"
-            android:text="Register as doctor" android:layout_height="wrap_content"
+            android:text="Login as doctor" android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintVertical_bias="0.293"/>
     <Button android:layout_width="match_parent" android:id="@+id/login_patient"
-            android:text="Register as patient" android:layout_height="wrap_content"
+            android:text="Login as patient" android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"

@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".activities.HomeActivity$PlaceholderFragment">
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:id="@+id/constraintLayout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".activities.HomeActivity$PlaceholderFragment">
 
-    <TextView
-            android:id="@+id/section_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_constraintTop_creator="1"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            tools:layout_constraintLeft_creator="1"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout"/>
+	<androidx.cardview.widget.CardView
+			app:layout_constraintTop_toTopOf="parent"
+			android:layout_marginTop="16dp"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:cardCornerRadius="8dp">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="match_parent"
+				android:orientation="vertical"
+				android:layout_height="wrap_content">
+
+			<TextView
+					android:id="@+id/name"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_margin="@dimen/text_margin"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					android:gravity="start"
+					android:text="Všeobecná lekárska prehliadka\nzostáva 1 mesiac"
+					android:textAppearance="?attr/textAppearanceListItem"/>
+
+			<TextView
+					android:id="@+id/komentar"
+					android:text="Mudr. Lukáš Anda"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_margin="@dimen/text_margin"
+					app:layout_constraintTop_toBottomOf="@id/name"
+					app:layout_constraintStart_toStartOf="parent"
+					android:paddingBottom="16dp"
+					android:textAppearance="?attr/textAppearanceListItem"/>
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

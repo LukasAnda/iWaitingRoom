@@ -11,6 +11,8 @@ import com.lukasanda.medicalapp.R
 import com.lukasanda.medicalapp.WaitingPatient
 import com.lukasanda.medicalapp.utils.SwipeAndDragHelper
 import kotlinx.android.synthetic.main.fragment_pacient.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class MyPacientRecyclerViewAdapter(
@@ -48,9 +50,47 @@ class MyPacientRecyclerViewAdapter(
 	override fun onBindViewHolder(
 		holder: ViewHolder, position: Int
 	) {
-		val item = mValues[position]
-		holder.mView.name.text = item.patient.meno
-		holder.mView.poistovna.text = item.comment
+		val it = mValues[position]
+		var expanded = false
+		holder.mView.name.text = "Meno: ${it.patient.meno}"
+		holder.mView.komentar.text = it.comment
+		holder.mView.apply {
+			email.text = "Email: ${it.patient.email}"
+			poistovna.text = "Poisťovňa: ${it.patient.poistovna.toString()}"
+			krv.text = "Krv: ${it.patient.krvnaSkupina}${it.patient.krvRh}"
+			alergie.text = "Alergie:\n${it.patient.alergie?.joinToString(
+				separator = "\n"
+			)}"
+			ochorenia.text = "Ochorenia:\n${it.patient.ochorenia?.joinToString(
+				separator = "\n"
+			)}"
+
+			val operacieText = StringBuilder()
+			operacieText.append("Operacie:\n")
+			it.patient.operacie?.forEach {
+				operacieText.append(
+					"${it.operacia} - ${SimpleDateFormat(
+						"dd.MM.yyyy"
+					).format(Date(it.datumOperacie!!))}"
+				)
+				operacieText.append("\n")
+			}
+			operacie.text = operacieText
+
+			lieky.text = "Lieky:\n${it.patient.lieky?.joinToString(separator = "\n")}"
+
+			setOnClickListener {
+				if(expanded){
+					detail.visibility = View.GONE
+					expanded = false
+				} else {
+					detail.visibility = View.VISIBLE
+					expanded = true
+				}
+			}
+		}
+
+
 		holder.mView.handle.setOnTouchListener { v, event ->
 			if (event.actionMasked == MotionEvent.ACTION_DOWN) {
 				touchHelper?.startDrag(holder)
