@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "185776824876",
+    "firebase_url": "https://medicalapp-b851d.firebaseio.com",
+    "project_id": "medicalapp-b851d",
+    "storage_bucket": "medicalapp-b851d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185776824876:android:e245bd6cd41b7017",
+        "android_client_info": {
+          "package_name": "com.lukasanda.medicalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185776824876-rr6p523nvt4uev542lqsql0lclcntre4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lukasanda.medicalapp",
+            "certificate_hash": "4ee41e6d24259b3d9ca694123abddcfafe1f6910"
+          }
+        },
+        {
+          "client_id": "185776824876-qeec7uf4944ng3f0rootjilggei42tnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdNxMHZGGWrqUWOPUvXNaLjZEwJI79Hm0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185776824876-qeec7uf4944ng3f0rootjilggei42tnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
